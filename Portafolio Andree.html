@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portafolio de investigación · Andree · Microbiología y Parasitología UNMSM</title>
+<meta name="description" content="Portafolio del curso Metodología de la Investigación: CV, perfiles científicos, proyecto, referencias y herramientas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --vidrio:#EEF2F1;      /* fondo: portaobjetos */
+    --papel:#FFFFFF;
+    --tinta:#14302F;       /* texto principal */
+    --tinta-suave:#4B6361;
+    --cristal:#5B2A86;     /* cristal violeta (Gram +) */
+    --safranina:#C2415D;   /* safranina (Gram −) */
+    --linea:#CBD6D4;
+    --pendiente:#FFF1C9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --vidrio:#0F1A1A; --papel:#162424; --tinta:#E3ECEA; --tinta-suave:#9BB0AD;
+      --cristal:#B892E0; --safranina:#EE8A9F; --linea:#2B3D3C; --pendiente:#4A3F1E;
+    }
+  }
+  :root[data-theme="dark"]{
+    --vidrio:#0F1A1A; --papel:#162424; --tinta:#E3ECEA; --tinta-suave:#9BB0AD;
+    --cristal:#B892E0; --safranina:#EE8A9F; --linea:#2B3D3C; --pendiente:#4A3F1E;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--vidrio); color:var(--tinta);
+    font:400 1.0625rem/1.65 "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  img,svg{max-width:100%}
+  a{color:var(--cristal); text-underline-offset:3px}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--safranina); outline-offset:3px; border-radius:2px}
+  h1,h2,h3{font-family:"Source Serif 4", Georgia, "Times New Roman", serif; line-height:1.15; margin:0}
+  h2{font-size:clamp(1.6rem, 3.5vw, 2.1rem); font-weight:600; margin-bottom:1rem}
+  h3{font-size:1.2rem; font-weight:600}
+  p{margin:0 0 1rem}
+
+  .pendiente{background:var(--pendiente); padding:0 .25em; border-radius:3px}
+
+  /* ---------- Navegación ---------- */
+  nav{
+    position:sticky; top:0; z-index:5; background:color-mix(in srgb, var(--vidrio) 92%, transparent);
+    backdrop-filter:blur(6px); border-bottom:1px solid var(--linea);
+  }
+  nav ul{
+    list-style:none; margin:0 auto; padding:.7rem 1.25rem; max-width:1080px;
+    display:flex; gap:1.25rem; overflow-x:auto; white-space:nowrap; font-size:.93rem;
+  }
+  nav a{color:var(--tinta-suave); text-decoration:none}
+  nav a:hover{color:var(--cristal)}
+
+  /* ---------- Portada ---------- */
+  .portada{
+    max-width:1080px; margin:0 auto; padding:4.5rem 1.25rem 3.5rem;
+    display:grid; grid-template-columns:1.3fr 1fr; gap:2.5rem; align-items:center;
+  }
+  .portada h1{font-size:clamp(2.6rem, 7vw, 4.6rem); font-weight:700; letter-spacing:-.02em}
+  .portada .curso{color:var(--tinta-suave); margin:1rem 0 1.5rem; font-size:1.05rem}
+  .portada .intro{max-width:52ch; font-size:1.12rem}
+  .frotis{
+    aspect-ratio:1; border-radius:50%; background:var(--papel);
+    border:1px solid var(--linea); box-shadow:inset 0 0 0 14px var(--vidrio);
+    overflow:hidden;
+  }
+  .leyenda-frotis{font-size:.85rem; color:var(--tinta-suave); text-align:center; margin-top:.75rem}
+
+  /* ---------- Secciones ---------- */
+  section{max-width:1080px; margin:0 auto; padding:3.5rem 1.25rem; border-top:1px solid var(--linea)}
+  .cabecera{display:flex; justify-content:space-between; align-items:baseline; gap:1rem; flex-wrap:wrap}
+  .fecha{font-size:.85rem; color:var(--tinta-suave)}
+  .ancho-lectura{max-width:68ch}
+
+  .dos-col{display:grid; grid-template-columns:1fr 1fr; gap:2.5rem}
+
+  /* CV */
+  .trayectoria{list-style:none; margin:0; padding:0; border-left:2px solid var(--cristal)}
+  .trayectoria li{padding:0 0 1.4rem 1.25rem; position:relative}
+  .trayectoria li::before{
+    content:""; position:absolute; left:-7px; top:.45rem; width:12px; height:12px;
+    border-radius:50%; background:var(--papel); border:2px solid var(--cristal);
+  }
+  .trayectoria .periodo{font-size:.88rem; color:var(--tinta-suave)}
+  .boton{
+    display:inline-block; margin-top:.5rem; padding:.65rem 1.1rem; border-radius:6px;
+    background:var(--cristal); color:var(--papel); text-decoration:none; font-weight:600;
+  }
+  .boton.secundario{background:transparent; color:var(--cristal); border:1.5px solid var(--cristal)}
+
+  /* Perfiles */
+  .perfiles{list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(auto-fill, minmax(230px,1fr)); gap:1px; background:var(--linea); border:1px solid var(--linea)}
+  .perfiles li{background:var(--papel); padding:1.1rem 1.2rem}
+  .perfiles strong{display:block; font-family:"Source Serif 4", Georgia, serif; font-size:1.1rem}
+  .perfiles span{font-size:.9rem; color:var(--tinta-suave)}
+
+  /* Proyecto: versiones */
+  .versiones{list-style:none; padding:0; margin:0 0 2rem; counter-reset:v}
+  .versiones li{display:grid; grid-template-columns:3.2rem 1fr auto; gap:1rem; align-items:start; padding:1rem 0; border-bottom:1px solid var(--linea)}
+  .versiones li::before{
+    counter-increment:v; content:"V" counter(v);
+    font-family:"Source Serif 4", Georgia, serif; font-weight:700; font-size:1.4rem; color:var(--cristal);
+  }
+  .versiones p{margin:.2rem 0 0; font-size:.95rem; color:var(--tinta-suave)}
+
+  .tabla-envoltura{overflow-x:auto; border:1px solid var(--linea); background:var(--papel)}
+  table{border-collapse:collapse; width:100%; min-width:560px; font-size:.95rem}
+  th,td{text-align:left; padding:.75rem 1rem; border-bottom:1px solid var(--linea); vertical-align:top}
+  th{font-weight:600; background:var(--vidrio)}
+  td.estado{white-space:nowrap; color:var(--cristal); font-weight:600}
+
+  /* Referencias */
+  .referencias{padding-left:0; list-style:none; margin:0}
+  .referencias li{padding:1rem 0; border-bottom:1px solid var(--linea)}
+  .referencias .cita{padding-left:2em; text-indent:-2em; margin:0}
+  .referencias .uso{font-size:.93rem; color:var(--tinta-suave); margin:.4rem 0 0}
+
+  /* Herramienta */
+  .herramienta{background:var(--papel); border-left:4px solid var(--safranina); padding:1.5rem 1.6rem}
+  .herramienta ul{margin:.5rem 0 1rem; padding-left:1.2rem}
+
+  /* Certificados */
+  .certificados{list-style:none; padding:0; margin:0}
+  .certificados li{display:flex; justify-content:space-between; gap:1rem; padding:.8rem 0; border-bottom:1px solid var(--linea); flex-wrap:wrap}
+  .certificados .anio{color:var(--tinta-suave); font-size:.9rem}
+
+  /* Bitácora */
+  .bitacora{list-style:none; padding:0; margin:0; font-size:.95rem}
+  .bitacora li{display:grid; grid-template-columns:7.5rem 1fr; gap:1rem; padding:.55rem 0; border-bottom:1px dashed var(--linea)}
+  .bitacora time{color:var(--tinta-suave)}
+
+  footer{max-width:1080px; margin:0 auto; padding:2rem 1.25rem 3rem; font-size:.88rem; color:var(--tinta-suave); border-top:1px solid var(--linea)}
+
+  /* Carga inicial: una sola animación en el frotis */
+  @media (prefers-reduced-motion: no-preference){
+    .frotis .celula{opacity:0; animation:tincion .6s ease forwards}
+    @keyframes tincion{from{opacity:0; transform:scale(.6)} to{opacity:1; transform:scale(1)}}
+  }
+
+  @media (max-width:760px){
+    .portada{grid-template-columns:1fr; padding-top:2.5rem}
+    .frotis-caja{max-width:260px; margin:0 auto}
+    .dos-col{grid-template-columns:1fr}
+    .versiones li{grid-template-columns:2.6rem 1fr}
+    .versiones li a{grid-column:2}
+    .bitacora li{grid-template-columns:1fr; gap:0}
+  }
+</style>
+</head>
+<body>
+
+<nav aria-label="Secciones del portafolio">
+  <ul>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="#perfiles">Perfiles científicos</a></li>
+    <li><a href="#proyecto">Proyecto</a></li>
+    <li><a href="#referencias">Referencias</a></li>
+    <li><a href="#herramientas">Herramientas</a></li>
+    <li><a href="#certificados">Certificados</a></li>
+    <li><a href="#reflexion">Reflexión</a></li>
+    <li><a href="#bitacora">Actualizaciones</a></li>
+  </ul>
+</nav>
+
+<header class="portada">
+  <div>
+    <h1>Andree <span class="pendiente">[Apellidos]</span></h1>
+    <p class="curso">Microbiología y Parasitología, UNMSM<br>Portafolio del curso Metodología de la Investigación, 2026-II</p>
+    <p class="intro">Me interesa cómo el sistema inmune reconoce y responde a los materiales implantables, y cómo los microorganismos extremófilos pueden inspirar nuevos biomateriales. Este portafolio reúne mi trayectoria, mi proyecto del curso y la evolución de cada versión según las observaciones recibidas.</p>
+  </div>
+  <div class="frotis-caja">
+    <!-- Frotis con tinción Gram: el único elemento decorativo -->
+    <div class="frotis" role="img" aria-label="Ilustración de un frotis con cocos grampositivos en violeta y bacilos gramnegativos en rosado">
+      <svg viewBox="0 0 200 200" width="100%" height="100%">
+        <g fill="var(--cristal)">
+          <circle class="celula" cx="62" cy="58" r="6" style="animation-delay:.05s"/>
+          <circle class="celula" cx="74" cy="56" r="6" style="animation-delay:.1s"/>
+          <circle class="celula" cx="68" cy="68" r="6" style="animation-delay:.15s"/>
+          <circle class="celula" cx="80" cy="67" r="6" style="animation-delay:.2s"/>
+          <circle class="celula" cx="118" cy="132" r="6" style="animation-delay:.25s"/>
+          <circle class="celula" cx="130" cy="134" r="6" style="animation-delay:.3s"/>
+          <circle class="celula" cx="124" cy="144" r="6" style="animation-delay:.35s"/>
+          <circle class="celula" cx="48" cy="130" r="6" style="animation-delay:.4s"/>
+          <circle class="celula" cx="60" cy="131" r="6" style="animation-delay:.45s"/>
+        </g>
+        <g fill="var(--safranina)">
+          <rect class="celula" x="112" y="52" width="30" height="11" rx="5.5" transform="rotate(-25 127 57)" style="animation-delay:.5s"/>
+          <rect class="celula" x="136" y="78" width="30" height="11" rx="5.5" transform="rotate(15 151 83)" style="animation-delay:.55s"/>
+          <rect class="celula" x="84" y="100" width="30" height="11" rx="5.5" transform="rotate(60 99 105)" style="animation-delay:.6s"/>
+          <rect class="celula" x="40" y="92" width="30" height="11" rx="5.5" transform="rotate(-10 55 97)" style="animation-delay:.65s"/>
+          <rect class="celula" x="90" y="150" width="30" height="11" rx="5.5" transform="rotate(35 105 155)" style="animation-delay:.7s"/>
+        </g>
+      </svg>
+    </div>
+    <p class="leyenda-frotis">Tinción de Gram: violeta para grampositivos, rosado para gramnegativos.</p>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= CV ================= -->
+<section id="cv">
+  <div class="cabecera">
+    <h2>Hoja de vida</h2>
+    <span class="fecha">Actualizado: <span class="pendiente">[dd/mm/2026]</span></span>
+  </div>
+  <div class="dos-col">
+    <div>
+      <ol class="trayectoria">
+        <li>
+          <span class="periodo">2023 – actualidad</span>
+          <h3>Microbiología y Parasitología, UNMSM</h3>
+          <p>Cuarto año. Egreso previsto a mediados de 2028.</p>
+        </li>
+        <li>
+          <span class="periodo">Tres años</span>
+          <h3>Delegado de facultad</h3>
+          <p>Coordinación de alrededor de 60 estudiantes por ciclo y coorganización de eventos interdisciplinarios.</p>
+        </li>
+        <li>
+          <span class="periodo"><span class="pendiente">[año]</span> – actualidad</span>
+          <h3>Asesor metodológico, JP Consultoría</h3>
+          <p>Diseño de instrumentos, análisis estadístico y revisión de proyectos de investigación en ciencias de la salud, educación y psicología.</p>
+        </li>
+        <li>
+          <span class="periodo"><span class="pendiente">[año]</span></span>
+          <h3>Grupos de investigación</h3>
+          <p>Participación en MODULANS (Laboratorio de Inmunología) y ASPAST (estudio de extremófilos). <span class="pendiente">[Ajusta a tu situación actual]</span></p>
+        </li>
+      </ol>
+    </div>
+    <div class="ancho-lectura">
+      <h3>Competencias</h3>
+      <p>Redacción científica, búsqueda y gestión bibliográfica con Zotero, análisis estadístico <span class="pendiente">[SPSS / R / otro]</span>, programación en Python para automatizar el procesamiento de literatura.</p>
+      <h3>Idiomas</h3>
+      <p>Español nativo. Inglés <span class="pendiente">[nivel]</span>.</p>
+      <a class="boton" href="docs/cv.pdf" download>Descargar CV en PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Perfiles ================= -->
+<section id="perfiles">
+  <div class="cabecera">
+    <h2>Perfiles científicos y profesionales</h2>
+  </div>
+  <p class="ancho-lectura">Registros donde puede verificarse mi actividad académica. El CTI Vitae está vinculado a mi ORCID.</p>
+  <ul class="perfiles">
+    <li><a href="https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=00000" target="_blank" rel="noopener"><strong>CTI Vitae</strong></a><span>Registro nacional, Concytec</span></li>
+    <li><a href="https://orcid.org/0000-0000-0000-0000" target="_blank" rel="noopener"><strong>ORCID</strong></a><span class="pendiente">0000-0000-0000-0000</span></li>
+    <li><a href="https://www.researchgate.net/profile/TU-PERFIL" target="_blank" rel="noopener"><strong>ResearchGate</strong></a><span>Publicaciones y proyectos</span></li>
+    <li><a href="https://scholar.google.com/" target="_blank" rel="noopener"><strong>Google Scholar</strong></a><span>Opcional si aún no publicas</span></li>
+    <li><a href="https://www.linkedin.com/in/TU-PERFIL" target="_blank" rel="noopener"><strong>LinkedIn</strong></a><span>Perfil profesional</span></li>
+    <li><a href="https://github.com/andreerojas2303" target="_blank" rel="noopener"><strong>GitHub</strong></a><span>andreerojas2303</span></li>
+  </ul>
+</section>
+
+<!-- ================= Proyecto ================= -->
+<section id="proyecto">
+  <div class="cabecera">
+    <h2>Proyecto de investigación del curso</h2>
+    <span class="fecha">Última versión: <span class="pendiente">[dd/mm/2026]</span></span>
+  </div>
+  <div class="ancho-lectura">
+    <h3><span class="pendiente">[Título del proyecto, máximo 20 palabras]</span></h3>
+    <p><span class="pendiente">[Resumen de 3 a 4 líneas: problema, objetivo general, diseño y población.]</span></p>
+  </div>
+
+  <h3 style="margin:2rem 0 .5rem">Historial de versiones</h3>
+  <ol class="versiones">
+    <li>
+      <div><strong>Primera entrega</strong><p><span class="pendiente">[fecha]</span>. Planteamiento del problema y objetivos.</p></div>
+      <a class="boton secundario" href="docs/proyecto-v1-comentado.pdf" target="_blank">Ver comentada</a>
+    </li>
+    <li>
+      <div><strong>Versión corregida</strong><p><span class="pendiente">[fecha]</span>. Incorpora las observaciones del docente y el marco teórico.</p></div>
+      <a class="boton secundario" href="docs/proyecto-v2-comentado.pdf" target="_blank">Ver comentada</a>
+    </li>
+    <li>
+      <div><strong>Versión final</strong><p><span class="pendiente">[fecha]</span>. Metodología completa y matriz de consistencia.</p></div>
+      <a class="boton secundario" href="docs/proyecto-final.pdf" target="_blank">Ver documento</a>
+    </li>
+  </ol>
+
+  <h3 style="margin-bottom:.75rem">Observaciones y cómo las resolví</h3>
+  <div class="tabla-envoltura">
+    <table>
+      <thead><tr><th>Observación del docente</th><th>Cambio realizado</th><th>Versión</th></tr></thead>
+      <tbody>
+        <tr><td><span class="pendiente">[Ej.: El objetivo general no coincide con la pregunta.]</span></td><td><span class="pendiente">[Ej.: Reformulé ambos con el mismo verbo y las mismas variables.]</span></td><td class="estado">V2</td></tr>
+        <tr><td><span class="pendiente">[Ej.: Faltan antecedentes nacionales.]</span></td><td><span class="pendiente">[Ej.: Agregué tres artículos peruanos indexados.]</span></td><td class="estado">V2</td></tr>
+        <tr><td><span class="pendiente">[Observación]</span></td><td><span class="pendiente">[Cambio]</span></td><td class="estado">V3</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ================= Referencias ================= -->
+<section id="referencias">
+  <div class="cabecera">
+    <h2>Referencias del proyecto</h2>
+    <span class="fecha">Estilo: <span class="pendiente">[APA 7 / Vancouver]</span>, gestionadas en Zotero</span>
+  </div>
+  <p class="ancho-lectura">Cada referencia incluye una nota sobre para qué la usé en el proyecto.</p>
+  <ul class="referencias">
+    <li>
+      <p class="cita"><span class="pendiente">Apellido, A. A., y Apellido, B. B. (2024). Título del artículo. <em>Nombre de la Revista</em>, <em>12</em>(3), 45–60.</span> <a href="https://doi.org/10.xxxx/xxxxx" target="_blank" rel="noopener">https://doi.org/10.xxxx/xxxxx</a></p>
+      <p class="uso"><span class="pendiente">Uso: sustenta la magnitud del problema en el contexto internacional.</span></p>
+    </li>
+    <li>
+      <p class="cita"><span class="pendiente">Apellido, C. (2023). Título del artículo. <em>Revista Peruana de …</em>, <em>40</em>(1), 10–18.</span> <a href="https://doi.org/10.xxxx/xxxxx" target="_blank" rel="noopener">https://doi.org/10.xxxx/xxxxx</a></p>
+      <p class="uso"><span class="pendiente">Uso: antecedente nacional con la misma variable y diseño comparable.</span></p>
+    </li>
+    <li>
+      <p class="cita"><span class="pendiente">Autor, D. (2022). <em>Título del libro</em> (2.ª ed.). Editorial.</span></p>
+      <p class="uso"><span class="pendiente">Uso: definición conceptual de la variable principal.</span></p>
+    </li>
+  </ul>
+  <p style="margin-top:1.25rem"><a class="boton secundario" href="docs/referencias.bib" download>Descargar referencias (.bib)</a></p>
+</section>
+
+<!-- ================= Herramientas ================= -->
+<section id="herramientas">
+  <div class="cabecera"><h2>Herramientas propias</h2></div>
+  <div class="herramienta ancho-lectura">
+    <h3>pdf_a_md: conversor de artículos científicos a Markdown</h3>
+    <p>Convierte artículos en PDF a texto Markdown estructurado para leerlos, anotarlos y enlazarlos en mis notas de investigación.</p>
+    <ul>
+      <li>Conserva títulos, secciones y referencias del artículo original.</li>
+      <li>Facilita la lectura crítica y la extracción de datos para los antecedentes.</li>
+      <li>Se integra con mi flujo de trabajo en Zotero y Obsidian.</li>
+    </ul>
+    <p><span class="pendiente">[Ajusta estas tres líneas a lo que realmente hace tu herramienta.]</span></p>
+    <a class="boton" href="https://github.com/andreerojas2303/pdf_a_md" target="_blank" rel="noopener">Ver repositorio</a>
+  </div>
+</section>
+
+<!-- ================= Certificados ================= -->
+<section id="certificados">
+  <div class="cabecera"><h2>Certificados</h2></div>
+  <ul class="certificados ancho-lectura">
+    <li><a href="docs/certificados/cert-1.pdf" target="_blank"><span class="pendiente">[Nombre del curso o evento], [institución]</span></a><span class="anio"><span class="pendiente">[año]</span></span></li>
+    <li><a href="docs/certificados/cert-2.pdf" target="_blank"><span class="pendiente">[Nombre del curso o evento], [institución]</span></a><span class="anio"><span class="pendiente">[año]</span></span></li>
+    <li><a href="docs/certificados/cert-3.pdf" target="_blank"><span class="pendiente">[Nombre del curso o evento], [institución]</span></a><span class="anio"><span class="pendiente">[año]</span></span></li>
+  </ul>
+</section>
+
+<!-- ================= Reflexión ================= -->
+<section id="reflexion">
+  <div class="cabecera"><h2>Reflexión sobre el curso</h2></div>
+  <div class="ancho-lectura">
+    <p><span class="pendiente">[Primer párrafo: qué entendías por investigar al empezar el curso y qué cambió.]</span></p>
+    <p><span class="pendiente">[Segundo párrafo: la observación que más te costó resolver y qué aprendiste de ella.]</span></p>
+    <p><span class="pendiente">[Tercer párrafo: qué harías distinto en tu próximo proyecto o en tu tesis.]</span></p>
+  </div>
+</section>
+
+<!-- ================= Bitácora ================= -->
+<section id="bitacora">
+  <div class="cabecera"><h2>Registro de actualizaciones</h2></div>
+  <p class="ancho-lectura">El portafolio se evalúa en las dos partes del curso, así que registro aquí cada cambio.</p>
+  <ul class="bitacora ancho-lectura">
+    <li><time datetime="2026-09-18">18/09/2026</time><span>Creación del portafolio y carga del CV.</span></li>
+    <li><time><span class="pendiente">[fecha]</span></time><span><span class="pendiente">[Ej.: Subí la V1 comentada del proyecto.]</span></span></li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  Andree <span class="pendiente">[Apellidos]</span>, Facultad de Ciencias Biológicas, UNMSM. Contacto: <a href="mailto:tu-correo@unmsm.edu.pe"><span class="pendiente">tu-correo@unmsm.edu.pe</span></a>
+</footer>
+
+</body>
+</html>
