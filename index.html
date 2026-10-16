@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Portafolio de investigación · Andree Rojas · Microbiología y Parasitología UNMSM</title>
-<meta name="description" content="Portafolio del curso Metodología de la Investigación: hoja de vida, perfiles científicos, proyecto sobre veneno de Megalopyge, referencias y herramientas.">
+<meta name="description" content="Portafolio del curso Metodología de la Investigación: perfil de investigador, perfiles científicos, proyecto sobre veneno de Megalopyge, referencias y herramientas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -17,17 +17,16 @@
     --cristal:#5B2A86;
     --safranina:#C2415D;
     --linea:#CBD6D4;
-    --pendiente:#FFF1C9;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
       --vidrio:#0F1A1A; --papel:#162424; --tinta:#E3ECEA; --tinta-suave:#9BB0AD;
-      --cristal:#B892E0; --safranina:#EE8A9F; --linea:#2B3D3C; --pendiente:#4A3F1E;
+      --cristal:#B892E0; --safranina:#EE8A9F; --linea:#2B3D3C;
     }
   }
   :root[data-theme="dark"]{
     --vidrio:#0F1A1A; --papel:#162424; --tinta:#E3ECEA; --tinta-suave:#9BB0AD;
-    --cristal:#B892E0; --safranina:#EE8A9F; --linea:#2B3D3C; --pendiente:#4A3F1E;
+    --cristal:#B892E0; --safranina:#EE8A9F; --linea:#2B3D3C;
   }
 
   *{box-sizing:border-box}
@@ -44,8 +43,6 @@
   h3{font-size:1.2rem; font-weight:600}
   p{margin:0 0 1rem}
   em{font-style:italic}
-
-  .pendiente{background:var(--pendiente); padding:0 .25em; border-radius:3px}
 
   nav{
     position:sticky; top:0; z-index:5; background:color-mix(in srgb, var(--vidrio) 92%, transparent);
@@ -66,6 +63,8 @@
   .portada h1{font-size:clamp(2.6rem, 7vw, 4.6rem); font-weight:700; letter-spacing:-.02em}
   .portada .curso{color:var(--tinta-suave); margin:1rem 0 1.5rem; font-size:1.05rem}
   .portada .intro{max-width:52ch; font-size:1.12rem}
+  .lineas{list-style:none; padding:0; margin:0 0 1.25rem; display:flex; flex-wrap:wrap; gap:.5rem}
+  .lineas li{font-size:.9rem; padding:.25rem .7rem; border:1px solid var(--cristal); color:var(--cristal); border-radius:999px}
   .retrato{
     position:relative; border-radius:4px; overflow:hidden; background:var(--papel);
     border:1px solid var(--linea); aspect-ratio:4/5;
@@ -82,6 +81,8 @@
   .fecha{font-size:.85rem; color:var(--tinta-suave)}
   .ancho-lectura{max-width:68ch}
   .dos-col{display:grid; grid-template-columns:1fr 1fr; gap:2.5rem}
+  .dos-col h3 + p{margin-top:.25rem}
+  .nota{font-size:.9rem; color:var(--tinta-suave)}
 
   .trayectoria{list-style:none; margin:0; padding:0; border-left:2px solid var(--cristal)}
   .trayectoria li{padding:0 0 1.4rem 1.25rem; position:relative}
@@ -90,6 +91,9 @@
     border-radius:50%; background:var(--papel); border:2px solid var(--cristal);
   }
   .trayectoria .periodo{font-size:.88rem; color:var(--tinta-suave)}
+  .formativa{list-style:none; padding:0; margin:.25rem 0 1rem}
+  .formativa li{padding:.45rem 0; border-bottom:1px solid var(--linea); font-size:.95rem}
+  .formativa .periodo{display:block; font-size:.85rem; color:var(--tinta-suave)}
   .boton{
     display:inline-block; margin-top:.5rem; padding:.65rem 1.1rem; border-radius:6px;
     background:var(--cristal); color:var(--papel); text-decoration:none; font-weight:600;
@@ -162,6 +166,12 @@
   <div>
     <h1>Andree Rojas</h1>
     <p class="curso">Microbiología y Parasitología, UNMSM<br>Portafolio del curso Metodología de la Investigación, 2026-II</p>
+    <p class="intro">Me interesa la inmunología de los biomateriales: cómo responde el sistema inmune a los dispositivos implantables y qué propiedades hacen que un material sea aceptado. A largo plazo, quiero explorar materiales derivados de organismos extremófilos.</p>
+    <ul class="lineas" aria-label="Líneas de interés">
+      <li>Inmunología de biomateriales</li>
+      <li>Respuesta a cuerpo extraño</li>
+      <li>Biomateriales de extremófilos</li>
+    </ul>
     <p class="intro">Este portafolio reúne mi trayectoria, el proyecto del curso y la evolución de cada entregable según las observaciones recibidas.</p>
   </div>
   <div class="retrato-caja">
@@ -178,7 +188,7 @@
 <section id="cv">
   <div class="cabecera">
     <h2>Hoja de vida</h2>
-    <span class="fecha">Actualizado: <span class="fecha">[11/10/2026]</span></span>
+    <span class="fecha">Actualizado: 15/10/2026</span>
   </div>
   <div class="dos-col">
     <div>
@@ -186,17 +196,22 @@
         <li>
           <span class="periodo">Marzo 2023 – actualidad</span>
           <h3>Microbiología y Parasitología, UNMSM</h3>
-          <p>Cuarto año. Egreso previsto a mediados de 2028.</p>
+          <p>Cuarto año. Egreso previsto en 2028.</p>
         </li>
         <li>
           <span class="periodo">2026 – actualidad</span>
-          <h3>Grupo de investigación ASPAST</h3>
-          <p>En proceso de redacción de una revisión sistemática sobre oceanografía planetaria y límites de habitabilidad.</p>
+          <h3>Investigador, Asociación Peruana de Astrobiología (ASPAST)</h3>
+          <p>Integro el equipo que elabora un artículo de revisión sobre la habitabilidad de océanos extraterrestres. Participación en equipo en el NASA Space Apps Challenge 2026.</p>
         </li>
         <li>
-          <span class="periodo">2026 – actualidad</span>
-          <h3>Asesor metodológico, JP Consultoría</h3>
-          <p>Diseño de instrumentos, análisis estadístico y apoyo en la revisión de proyectos de investigación en ciencias de la salud, educación y psicología.</p>
+          <span class="periodo">Abril 2026 – actualidad</span>
+          <h3>Asesor metodológico, consultora privada</h3>
+          <p>Asesoría a tesistas de pregrado y posgrado en diseño de investigación, validación de instrumentos y análisis estadístico, sin alterar ni fabricar datos.</p>
+        </li>
+        <li>
+          <span class="periodo">Julio 2025 – junio 2026</span>
+          <h3>Estudiante colaborador, Laboratorio de Inmunología, FCB-UNMSM</h3>
+          <p>Apoyo en el proyecto de un docente investigador (Western blot y preparación de reactivos), cultivo celular y prácticas del curso de Inmunología.</p>
         </li>
         <li>
           <span class="periodo">2023 – 2025</span>
@@ -206,8 +221,15 @@
       </ol>
     </div>
     <div class="ancho-lectura">
+      <h3>Investigación formativa</h3>
+      <p class="nota">Proyectos de curso, no publicados.</p>
+      <ul class="formativa">
+        <li><span class="periodo">Enero – marzo 2026</span>Prevalencia de ectoparásitos en <em>Columba livia</em>, Cercado de Lima (coordinador del equipo)</li>
+        <li><span class="periodo">Agosto – noviembre 2025</span>Revisión sobre terapia génica con vectores AAV para la deuteranopia (póster académico)</li>
+        <li><span class="periodo">Abril – julio 2025</span>Revisión bibliográfica sobre inmunosenescencia</li>
+      </ul>
       <h3>Competencias</h3>
-      <p>Análisis estadístico en R, SPSS y PAST v4. Gestión bibliográfica con Zotero y Mendeley. Redacción científica y aplicación de normas de citación. Programación en Python para automatizar el procesamiento de literatura.</p>
+      <p>Laboratorio: Western blot, preparación de reactivos y cultivo celular; qPCR, cultivo bacteriano y microscopía en cursos. Análisis de datos en PAST v4, Excel y R (nivel inicial), incluido el análisis de confiabilidad de instrumentos. Búsqueda en Web of Science, PubMed y ScienceDirect, y gestión bibliográfica con Zotero y Mendeley. Python para automatizar el procesamiento de literatura.</p>
       <h3>Idiomas</h3>
       <p>Español nativo. Inglés nivel básico, con lectura fluida de literatura científica.</p>
       <div class="botonera">
@@ -223,7 +245,9 @@
   <p class="ancho-lectura">Registros donde puede verificarse mi actividad académica.</p>
   <ul class="perfiles">
     <li><a href="https://orcid.org/0009-0000-8962-4570" target="_blank" rel="noopener"><strong>ORCID</strong></a><span>0009-0000-8962-4570</span></li>
-    <li><a href="https://ctivitae.concytec.gob.pe/" target="_blank" rel="noopener"><strong>CTI Vitae</strong></a><span class="pendiente">[--]</span></li>
+    <!-- Descomentar cuando tengas el enlace de tu ficha CTI Vitae:
+    <li><a href="PEGAR-ENLACE-CTI-VITAE" target="_blank" rel="noopener"><strong>CTI Vitae</strong></a><span>Concytec</span></li>
+    -->
     <li><a href="https://www.researchgate.net/profile/Juan-Rojas-Bustamante-2" target="_blank" rel="noopener"><strong>ResearchGate</strong></a><span>Juan Rojas Bustamante</span></li>
     <li><a href="https://www.linkedin.com/in/juan-andree-rojas-bustamante-a47b06282/" target="_blank" rel="noopener"><strong>LinkedIn</strong></a><span>Perfil profesional</span></li>
     <li><a href="https://github.com/andreerojas2303" target="_blank" rel="noopener"><strong>GitHub</strong></a><span>andreerojas2303</span></li>
@@ -237,9 +261,9 @@
     <span class="fecha">Grupo PG3 · Última versión: 09/10/2026</span>
   </div>
   <div class="ancho-lectura">
-    <h3>Efecto in vitro de la fracción peptídica menor a 10 kDa del veneno de <em>Megalopyge</em> sp. sobre el crecimiento de <em>Staphylococcus aureus</em> y <em>Pseudomonas aeruginosa</em></h3>
+    <h3>Efecto <em>in vitro</em> de la fracción peptídica menor a 10 kDa del veneno de <em>Megalopyge</em> sp. sobre el crecimiento de <em>Staphylococcus aureus</em> y <em>Pseudomonas aeruginosa</em></h3>
     <p>Las megalisinas del veneno de Megalopygidae provienen de genes adquiridos por transferencia horizontal desde bacterias, y la fracción peptídica menor a 10 kDa concentra la mayor parte de los conteos espectrales del veneno sin tener función asignada. El proyecto evalúa si esa fracción inhibe el crecimiento de dos cepas de referencia de prioridad alta según la OMS, mediante microdilución en caldo según el estándar CLSI M07.</p>
-    <p><strong>Pregunta:</strong> ¿Qué efecto tiene la fracción peptídica menor a 10 kDa del veneno de <em>Megalopyge</em> sp. sobre el crecimiento in vitro de <em>S. aureus</em> ATCC 29213 y <em>P. aeruginosa</em> ATCC 27853?</p>
+    <p><strong>Pregunta:</strong> ¿Qué efecto tiene la fracción peptídica menor a 10 kDa del veneno de <em>Megalopyge</em> sp. sobre el crecimiento <em>in vitro</em> de <em>S. aureus</em> ATCC 29213 y <em>P. aeruginosa</em> ATCC 27853?</p>
     <p>Integrantes: Rubi Alexandra Chuquimbalqui Rodríguez, Juan Andree Rojas Bustamante y Giuliana Andrea Rojas Torres.</p>
   </div>
 
@@ -248,27 +272,27 @@
     <li>
       <span class="etiqueta">S1 · E1</span>
       <div><strong>Propuesta de problemas de investigación</strong><p>Primera formulación del problema, con pregunta de respuesta cerrada.</p></div>
-      <a class="boton secundario" href="docs/e1-propuesta-problemas.pdf" target="_blank">Ver</a>
+      <a class="boton secundario" href="docs/e1-propuesta-problemas.pdf" target="_blank" rel="noopener">Ver</a>
     </li>
     <li>
       <span class="etiqueta">S2 · E2</span>
       <div><strong>Situación problemática y problema de investigación</strong><p>Marco del problema, vacío doble y declaración sobre uso de IA con el prompt empleado.</p></div>
-      <a class="boton secundario" href="docs/e2-situacion-problematica.pdf" target="_blank">Ver</a>
+      <a class="boton secundario" href="docs/e2-situacion-problematica.pdf" target="_blank" rel="noopener">Ver</a>
     </li>
     <li>
       <span class="etiqueta">S4 · E3</span>
       <div><strong>Listado bibliográfico y estrategia de búsqueda</strong><p>Ecuaciones booleanas para ScienceDirect y PubMed, y referencias de acceso abierto en APA 7.</p></div>
-      <a class="boton secundario" href="docs/e3-listado-bibliografico.pdf" target="_blank">Ver</a>
+      <a class="boton secundario" href="docs/e3-listado-bibliografico.pdf" target="_blank" rel="noopener">Ver</a>
     </li>
     <li>
       <span class="etiqueta">S6 · E4</span>
       <div><strong>Hipótesis y variables en un artículo primario</strong><p>Ejercicio de análisis sobre un estudio de sepsis neonatal de inicio precoz.</p></div>
-      <a class="boton secundario" href="docs/e4-hipotesis-variables.pdf" target="_blank">Ver</a>
+      <a class="boton secundario" href="docs/e4-hipotesis-variables.pdf" target="_blank" rel="noopener">Ver</a>
     </li>
     <li>
       <span class="etiqueta">S7 · E5</span>
       <div><strong>Defensa de hipótesis y objetivos</strong><p>Versión integrada: situación problemática, justificación, viabilidad, hipótesis, variables y objetivos.</p></div>
-      <a class="boton secundario" href="docs/e5-hipotesis-y-objetivos.pdf" target="_blank">Ver</a>
+      <a class="boton secundario" href="docs/e5-hipotesis-y-objetivos.pdf" target="_blank" rel="noopener">Ver</a>
     </li>
   </ol>
 
@@ -280,17 +304,17 @@
       <tbody>
         <tr>
           <td>La pregunta admitía respuesta de sí o no, de modo que funcionaba como hipótesis y no como pregunta de investigación.</td>
-          <td>Reformulamos con la fórmula interrogativa abierta: "¿Cuál es la actividad antibacteriana in vitro del extracto de veneno…?".</td>
+          <td>Reformulamos con la fórmula interrogativa abierta: «¿Cuál es la actividad antibacteriana <em>in vitro</em> del extracto de veneno…?».</td>
           <td class="estado">E3</td>
         </tr>
         <tr>
-          <td>Preguntar "cuál es la actividad antibacteriana" presupone que esa actividad existe. La docente sugirió volver a una formulación parecida a la de las primeras semanas.</td>
-          <td>Conservamos la forma abierta, pero desplazamos el foco al efecto sobre el crecimiento bacteriano: «¿Qué efecto tiene la fracción peptídica… sobre el crecimiento in vitro?». Así la pregunta admite también la ausencia de efecto, sin volver a la respuesta cerrada.</td>
+          <td>Preguntar «cuál es la actividad antibacteriana» presupone que esa actividad existe. La docente sugirió volver a una formulación parecida a la de las primeras semanas.</td>
+          <td>Conservamos la forma abierta, pero desplazamos el foco al efecto sobre el crecimiento bacteriano: «¿Qué efecto tiene la fracción peptídica… sobre el crecimiento <em>in vitro</em>?». Así la pregunta admite también la ausencia de efecto, sin volver a la respuesta cerrada.</td>
           <td class="estado">E5</td>
         </tr>
         <tr>
           <td>Necesidad de acotar el objeto de estudio y hacer el proyecto ejecutable.</td>
-          <td>Pasamos del veneno completo a la fracción peptídica menor a 10 kDa, y de aislados clínicos a las cepas de referencia ATCC 29213 y ATCC 27853, recomendadas por compañera para determinar la concentración inhibitoria mínima por microdilución.</td>
+          <td>Pasamos del veneno completo a la fracción peptídica menor a 10 kDa, y de aislados clínicos a las cepas de referencia ATCC 29213 y ATCC 27853, recomendadas para determinar la concentración inhibitoria mínima por microdilución.</td>
           <td class="estado">E5</td>
         </tr>
       </tbody>
@@ -346,25 +370,29 @@
 <section id="herramientas">
   <div class="cabecera"><h2>Herramientas propias</h2></div>
   <div class="herramienta ancho-lectura">
-    <h3>pdf_a_md: conversor de artículos científicos a Markdown</h3>
+    <h3>pdf-to-markdown: conversor de artículos científicos a Markdown</h3>
     <p>Convierte artículos en PDF a texto Markdown estructurado, que luego uso para leer, anotar y preparar las diapositivas con las que presento cada paper.</p>
     <ul>
       <li>Conserva títulos, secciones y referencias del artículo original.</li>
       <li>Facilita la lectura crítica y la extracción de datos para los antecedentes.</li>
       <li>Alimenta directamente el flujo con el que armo las presentaciones del curso.</li>
     </ul>
-    <a class="boton" href="https://github.com/andreerojas2303/pdf_a_md" target="_blank" rel="noopener">Ver repositorio</a>
+    <a class="boton" href="https://github.com/AndreeRojas2303/pdf-to-markdown" target="_blank" rel="noopener">Ver repositorio</a>
   </div>
 </section>
 
 <!-- ================= Certificados ================= -->
 <section id="certificados">
   <div class="cabecera"><h2>Formación continua y eventos científicos</h2></div>
+  <p class="ancho-lectura nota">Los títulos enlazados abren el certificado correspondiente.</p>
   <ul class="certificados ancho-lectura">
-    <li><a href="docs/certificados/biologia-sintetica.pdf" target="_blank">Fundamentos y Aplicaciones en Biología Sintética, certificación</a><span class="anio">2025</span></li>
-    <li><a href="docs/certificados/eci-2026.pdf" target="_blank">Encuentro Científico Internacional (ECI), asistente</a><span class="anio">2024 y 2026</span></li>
-    <li><a href="docs/certificados/icbar-2025.pdf" target="_blank">Congreso Nacional sobre Ciencias de la Vida ICBAR, UNMSM, asistente</a><span class="anio">2023 y 2025</span></li>
-    <li><a href="docs/certificados/estrategias-aprendizaje.pdf" target="_blank">Conferencias sobre Estrategias de Aprendizaje y Metodología de la Enseñanza, asistente</a><span class="anio">2024</span></li>
+    <li><span>NASA International Space Apps Challenge, participante en equipo con ASPAST</span><span class="anio">2026</span></li>
+    <li><span>Encuentro Científico Internacional (ECI), asistente</span><span class="anio">2026</span></li>
+    <li><span>Congreso Nacional sobre Ciencias de la Vida, ICBAR, UNMSM, asistente</span><span class="anio">2025</span></li>
+    <li><a href="docs/certificados/biologia-sintetica.pdf" target="_blank" rel="noopener">Curso Fundamentos y Aplicaciones de Biología Sintética (20 h), FCB-UNMSM, asistente</a><span class="anio">2025</span></li>
+    <li><a href="docs/certificados/inyectoterapia-extraccion-sanguinea.pdf" target="_blank" rel="noopener">Curso teórico-práctico Inyectoterapia y Extracción Sanguínea (15 h), FFB-UNMSM</a><span class="anio">2024</span></li>
+    <li><a href="docs/certificados/eci-2024.pdf" target="_blank" rel="noopener">LII Encuentro Científico Internacional, ECI 2024 de verano, asistente</a><span class="anio">2024</span></li>
+    <li><a href="docs/certificados/icbar-2023.pdf" target="_blank" rel="noopener">II Congreso Nacional sobre Ciencias de la Vida y XXIX Reunión Científica del ICBAR, UNMSM, asistente</a><span class="anio">2023</span></li>
   </ul>
 </section>
 
@@ -372,7 +400,7 @@
 <section id="reflexion">
   <div class="cabecera"><h2>Reflexión sobre el curso</h2></div>
   <div class="ancho-lectura">
-    <p><span class="pendiente">[---]</span></p>
+    <p class="nota">Esta sección se publicará al cierre del curso.</p>
   </div>
 </section>
 
@@ -382,7 +410,7 @@
   <p class="ancho-lectura">El portafolio se evalúa en las dos partes del curso, así que registro aquí cada cambio.</p>
   <ul class="bitacora ancho-lectura">
     <li><time datetime="2026-10-11">11/10/2026</time><span>Publicación del portafolio con hoja de vida, perfiles, entregables 1 al 5 y referencias.</span></li>
-    <li><time><span class="pendiente">[22/11/2026]</span></time><span><span class="pendiente">[Próxima actualización]</span></span></li>
+    <li><time datetime="2026-10-15">15/10/2026</time><span>Hoja de vida reescrita como perfil de investigador, con los proyectos de curso identificados como no publicados. Se enlazan el CV en PDF, los entregables y los certificados.</span></li>
   </ul>
 </section>
 
